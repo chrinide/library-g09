@@ -1,0 +1,27 @@
+%chk=no-stable.chk
+%nprocs=2
+%mem=100mw
+#p RHF/6-31G(d) stable scf=(tight,qc)
+
+RHF/STO-3G singlet O3
+This calculation will provide a ainstable wave function.
+
+0 1
+O1
+O2  1  1.2227
+O3  1  1.2227  2  114.0451
+
+--link1--
+%chk=stable.chk
+%mem=100mw
+%nprocs=2
+#pUHF/6-31G(d) guess=(INDO,mix) stable scf=(tight,qc)
+
+UHF/STO-3G singlet O3
+This calculation will provide a stability of wave function.
+
+0 1
+O1
+O2  1  1.2227
+O3  1  1.2227  2  114.0451
+
