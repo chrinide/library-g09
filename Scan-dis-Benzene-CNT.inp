@@ -1,6 +1,6 @@
-#P pm6 
-scf(xqc)
-scan
+%mem=16GB
+%nprocs=8
+#P pm6 scf(xqc) scan
 
 benzene nanotube scan
 
