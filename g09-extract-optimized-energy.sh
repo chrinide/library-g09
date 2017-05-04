@@ -1,11 +1,9 @@
 #!/bin/bash
-# Extract energy from gaussian output with Searching keyword "SCF D"
-for out in *0.out
+
+for file in *.log
 do
- echo $out
- sed -n '/SCF D/{n;p;}' $out
- # print all energy convereged
- printf "--------\n" > {$out}.energy
- 
+ echo ${file}
+ sed -n '/SCF D/{n;p;}' ${file}
+ printf "######################\n" > ${file}.Min.Energy
 done
 echo 'Jobe done'
