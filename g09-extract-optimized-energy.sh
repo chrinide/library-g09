@@ -1,9 +1,15 @@
 #!/bin/bash
 
-for file in *.log
+cd /home/$USER/
+mkdir -r extract_energy
+cd ./extract_energy
+
+for logfile in *.log
 do
- echo ${file}
- sed -n '/SCF D/{n;p;}' ${file}
- printf "######################\n" > ${file}.Min.Energy
+ echo ${logfile}
+ sed -n '/SCF D/{n;p;}' ${logfile}
+ printf "--------------------------------\n" > ${logfile}_extracted_energy
+ echo '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n' > ${logfile}_extracted_energy
 done
+
 echo 'Jobe done'
