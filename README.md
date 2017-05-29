@@ -1,4 +1,4 @@
-# library
+# library-g09
 The GAUSSIAN QM PROGRAM CABINET: 
 - Example of input file for special calculation.
 - Useful Script for user.
