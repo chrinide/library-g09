@@ -23,4 +23,3 @@ H    1.34338270    0.87365135    -2.69758400
 * 1 6 * R      !Relax coordinates passing through atoms 1-6 (dihedral)
 D 2 1 6 7 S 12 5.0      !Scan dihedral 2-1-6-7 in 12 steps of 5 deg
 
-
