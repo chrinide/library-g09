@@ -43,7 +43,8 @@ for line in rline[start+5 : end] :
     word1 = int(words[1])
     word3 = str(words[3])
 
-## Periodic table supported -------------------------
+## Periodic table supported 
+## Your molecule should comprise only atoms between 1-90
 
     if   word1 ==   1 : word1 = "H"
     elif word1 ==   2 : word1 = "He"
@@ -135,8 +136,6 @@ for line in rline[start+5 : end] :
     elif word1 ==  88 : word1 = "Ra"
     elif word1 ==  89 : word1 = "Ac"
     elif word1 ==  90 : word1 = "Th"
-
-## Your sturcture should comprise the atom between 1-90 -----------------
 
 ## copy from atom list.
 
