@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-## Modified by Rangsiman Ketkaew, Master student in computationl chemsitry
+## Modified by Rangsiman Ketkaew, Master student in computational chemistry
 ## Computational Chemistry Research Unit, Thammasat University, Thailand
 ## https://github.com/rangsimanketkaew
 ## 20170403 updated.
