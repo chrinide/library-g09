@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd .
 for f in *chk
 formchk $f
