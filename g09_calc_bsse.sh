@@ -2,6 +2,30 @@
 # Written by Rangsiman Ketkaew, CompChem TU, June, 2017
 # Usage: $ chmod +x ./calc_bsse.sh
 #      : $ ./calc_bsse.sh
+# or use the executable file:
+#        $ chmod +x ./g09_calc_bsse
+#        $ ./g09_calc_bsse
+
+echo "
+ ---------------------------------------------------------------
+
+      .. Basis Set Superposition Error (BSSE) Analysis ..
+
+ + Rangsiman Ketkaew
+   Computational Chemistry Research Unit (CCRU)
+   Department of Chemistry, Faculty of Science and Technology
+   Thammasat University, Thailand
+
+ + website: github.com/rangsimanketkaew/library-g09
+   E-mail: rangsiman1993@gmail.com
+
+ + v.1.2   : supports gaussian output file
+   v.1.2.1 : save results as txt file
+   v.1.3.1 : supports orca & q-chem output files
+   v.1.3.2 : Automatically search BSSE output file
+
+ ---------------------------------------------------------------
+"
 
 read -p "Enter Your Gaussian Output: " file
 who=`whoami`
