@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd /home/$USER/
 mkdir -r extract_energy
 cd ./extract_energy
