@@ -8,7 +8,6 @@
 
 echo "
  ---------------------------------------------------------------
-
       .. Basis Set Superposition Error (BSSE) Analysis ..
 
  + Rangsiman Ketkaew
@@ -19,21 +18,43 @@ echo "
  + website: github.com/rangsimanketkaew/library-g09
    E-mail: rangsiman1993@gmail.com
 
- + v.1.2   : supports gaussian output file
+ + v.1.2.0 : supports gaussian output file
    v.1.2.1 : save results as txt file
    v.1.3.1 : supports orca & q-chem output files
    v.1.3.2 : Automatically search BSSE output file
-
  ---------------------------------------------------------------
 "
+read -p "Please Enter ... "
 
-read -p "Enter Your Gaussian Output: " file
+clear
+
+echo "Enter the program that you used: 
+     Gaussian = 1
+     ORCA     = 2
+     Q-Chem   = 3"
+read -p "Which program did you use ?: " number
+if [ $number == 1 ]; then
+echo "=> You chose Gaussian"
+elif [ $number == 2 ]; then
+echo "=> You chose ORCA"
+elif [ $number == 3 ]; then
+echo "=> You chose Q-Chem"
+else
+echo "=> Your answer is not correct.
+   ... Bye Bye ..."
+exit
+fi
+
+read -p "Enter Your Gaussian Output (ex. water.out): " file
+echo "=> You submitted $file"
 who=`whoami`
 node=`hostname`
 now=`date`
 where=`pwd`
 
 if [ -e $file ]; then
+	if [ -n "`grep "Normal termination" $file`" ]; then
+
 echo "
 ---------------------------------------- BSSE Energy Extraction -----------------------------------------
 Run by $who at $node on $now
@@ -42,8 +63,7 @@ Run by $who at $node on $now
 #echo "We are at $where"
 #for f in `find ./ -name "*bsse*.log"`
 bs=`grep 'Standard basis' $file|tail -1`
-for f in $file
-	do
+	for f in $file; do
 		echo "File Name: $f   $bs" >> $where/results.BSSE.$file.txt
 		E_AB_AB=`grep 'SCF D' $f | awk '{print $5}'|tail -5|sed -n '1p'`
 		E_AB_A=`grep 'SCF D' $f | awk '{print $5}'|tail -5|sed -n '2p'`
@@ -68,9 +88,13 @@ for f in $file
 		echo -e "---------------------------------------------------------------------------------------------------------\n" \
 		>> $where/results.BSSE.$file.txt
 	done
-	echo "Congrats !!! Please check file results.BSSE.$file.txt"
+	echo "Congrats!!! Please check this file ==> results.BSSE.$file.txt"
+
+	else
+		echo "Error in your gaussian output file. Make sure that you've entered a correct file."
+	fi
 
 else
-	echo "Error !!! File $file does not exist."
+	echo "Oops!!! File $file does not exist."
 fi
 
