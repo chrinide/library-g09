@@ -10,5 +10,3 @@ The GAUSSIAN QM PROGRAM CABINET:
 - [g09-cartesian-extract.py](https://github.com/rangsimanketkaew/library-g09/blob/master/g09-cartesian-extract.py) python code script
 ## Disclaimer
 Do not trust my assessment. This repository is personal property.
-## Contact
-Rangsiman Ketkaew, rangsiman1993@gmail.com
